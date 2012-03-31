@@ -9,3 +9,8 @@ Makefile.old
 nytprof.out
 MANIFEST.bak
 *.sw[po]
+MYMETA.yml
+MYMETA.json
+.carton/
+carton.lock
+local/
