@@ -38,6 +38,12 @@ HTTP::Response::Maker - easy HTTP response object maker functions
 
   # now you can use functions like RESPOND_OK() or RESPOND_NOT_FOUND()
 
+or
+
+  use HTTP::Response::Maker::Exception prefix => 'throw_';
+
+  throw_FOUND(Location => '/');
+
 =head1 DESCRIPTION
 
 HTTP::Response::Maker provides HTTP response object maker functions.
@@ -80,6 +86,14 @@ Generates an L<< HTTP::Response >> object.
 =item PSGI
 
 Generates an arrayref of L<< PSGI response|PSGI/The-Response >> format.
+
+=item Plack
+
+Generates a L<< Plack::Response >> object.
+
+You can specify subclass of L<< Plack::Response >> to generate:
+
+  use HTTP::Response::Maker 'Plack', class => 'Your::Plack::Response';
 
 =item Exception
 
