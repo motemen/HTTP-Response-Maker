@@ -85,7 +85,7 @@ Generates an L<< HTTP::Response >> object.
 
 =item PSGI
 
-Generates an arrayref of L<< PSGI response|PSGI/The-Response >> format.
+Generates an arrayref of L<< PSGI response|PSGI/The_Response >> format.
 
 =item Plack
 
