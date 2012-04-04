@@ -15,7 +15,7 @@ sub import {
     $impl = "HTTP::Response::Maker::$impl";
     load_class $impl;
 
-    @_ = @args;
+    @_ = ($impl, @args);
     goto $impl->can('import');
 }
 
