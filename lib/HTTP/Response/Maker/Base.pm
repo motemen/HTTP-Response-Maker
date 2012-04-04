@@ -31,7 +31,7 @@ sub expand_args {
     my $message = status_message($code);
 
     $content = "$code $message" if not defined $content;
-    $content = '' if $code == HTTP_NO_CONTENT;
+    $content = '' if $code == HTTP_NO_CONTENT || $code == HTTP_NOT_MODIFIED;
 
     return ( $code, $message, $headers, $content );
 }
