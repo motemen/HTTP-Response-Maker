@@ -5,7 +5,7 @@ use parent 'HTTP::Response::Maker::Base';
 use HTTP::Exception;
 use HTTP::Status;
 
-sub make_response {
+sub _make_response {
     my ($class, $code, $message, $headers, $content) = @_;
 
     my %args;
@@ -17,3 +17,15 @@ sub make_response {
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+HTTP::Response::Maker::Exception - HTTP::Response::Maker implementation for HTTP::Exception
+
+=head1 DESCRIPTION
+
+This module provides functions to throw an L<HTTP::Exception>.
+
+=cut

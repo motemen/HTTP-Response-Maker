@@ -48,18 +48,18 @@ or
 =head1 DESCRIPTION
 
 HTTP::Response::Maker provides HTTP response object maker functions.
-They are named as C<< OK() >> or C<< NOT_FOUND() >>, corresponding to
-the L<< HTTP::Status >> constant names.
+They are named as C<OK()> or C<NOT_FOUND()>, corresponding to
+the L<HTTP::Status> constant names.
 
 =head1 USAGE
 
-=head2 use HTTP::Response::Maker $impl, %args;
+=head2 use HTTP::Response::Maker I<$impl>, I<%args>;
 
 Exports HTTP response maker functions to current package.
 
-$impl specifies what functions make. See IMPLEMENTATION.
+I<$impl> specifies what functions make. See IMPLEMENTATION.
 
-%args has these keys:
+I<%args> has these keys:
 
 =over 4
 
@@ -75,30 +75,30 @@ Default HTTP headers in arrayref.
 
 =head1 IMPLEMENTATION
 
-C<< import() >>'s first argument specifies what type of objects functions generate.
+C<import()>'s first argument specifies what type of objects functions generate.
 Currently it is one of:
 
 =over 4
 
-=item HTTPResponse
+=item L<HTTPResponse|HTTP::Response::Maker::HTTPResponse>
 
-Generates an L<< HTTP::Response >> object.
+Generates an L<HTTP::Response> object.
 
-=item PSGI
+=item L<PSGI|HTTP::Response::Maker::PSGI>
 
-Generates an arrayref of L<< PSGI response|PSGI/The_Response >> format.
+Generates an arrayref of L<PSGI response|PSGI/The_Response> format.
 
-=item Plack
+=item L<Plack|HTTP::Response::Maker::Plack>
 
-Generates a L<< Plack::Response >> object.
+Generates a L<Plack::Response> object.
 
-You can specify subclass of L<< Plack::Response >> to generate:
+You can specify subclass of L<Plack::Response> to generate:
 
   use HTTP::Response::Maker 'Plack', class => 'Your::Plack::Response';
 
-=item Exception
+=item L<Exception|HTTP::Response::Maker::Exception>
 
-Throws an L<< HTTP::Exception >>.
+Throws an L<HTTP::Exception>.
 
 =back
 
@@ -117,7 +117,7 @@ motemen E<lt>motemen@gmail.comE<gt>
 
 =head1 SEE ALSO
 
-L<< HTTP::Status >>, L<< PSGI >>, L<< HTTP::Response >>, L<< HTTP::Exception >>
+L<HTTP::Status>, L<PSGI>, L<HTTP::Response>, L<HTTP::Exception>
 
 =head1 LICENSE
 

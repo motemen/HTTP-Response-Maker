@@ -18,7 +18,16 @@ sub import {
     }
 }
 
-sub expand_args {
+sub _make_response_function {
+    my ($class, $code, $default_headers, $import_option) = @_;
+
+    return sub {
+        my @args = $class->_expand_args($code, $default_headers, @_);
+        return $class->_make_response(@args, $import_option);
+    };
+}
+
+sub _expand_args {
     my $class           = shift;
     my $code            = shift;
     my $default_headers = shift || do {
@@ -36,13 +45,12 @@ sub expand_args {
     return ( $code, $message, $headers, $content );
 }
 
-sub _make_response_function {
-    my ($class, $code, $default_headers, $import_option) = @_;
-
-    return sub {
-        my @args = $class->expand_args($code, $default_headers, @_);
-        return $class->make_response(@args, $import_option);
-    };
-}
-
 1;
+
+__END__
+
+=head1 NAME
+
+HTTP::Response::Maker::Base - base class for HTTP::Response::Maker::*
+
+=cut
