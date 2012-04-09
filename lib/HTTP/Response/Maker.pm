@@ -1,6 +1,7 @@
 package HTTP::Response::Maker;
 use strict;
 use warnings;
+use 5.008_001;
 use Class::Load qw(load_class);
 
 our $VERSION = '0.01';
