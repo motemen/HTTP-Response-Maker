@@ -1,3 +1,4 @@
+use strict;
 use Test::More;
 eval q{ use Test::Spelling };
 plan skip_all => "Test::Spelling is not installed." if $@;
@@ -10,3 +11,4 @@ motemen@gmail.com
 HTTP::Response::Maker
 HTTPResponse
 PSGI
+Plack
