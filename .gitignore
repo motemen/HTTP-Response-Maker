@@ -14,3 +14,5 @@ MYMETA.json
 .carton/
 carton.lock
 local/
+.prove
+Debian_CPANTS.txt
