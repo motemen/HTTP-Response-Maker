@@ -6,6 +6,7 @@ all_from 'lib/HTTP/Response/Maker.pm';
 requires 'HTTP::Status';
 requires 'Class::Load';
 requires 'Sub::Name';
+requires 'parent';
 
 tests 't/*.t';
 author_tests 'xt';
