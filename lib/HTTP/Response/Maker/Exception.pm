@@ -9,8 +9,13 @@ sub _make_response {
     my ($class, $code, $message, $headers, $content) = @_;
 
     my %args;
-    if (is_redirect($code) && (my $location = { @$headers }->{Location})) {
-        $args{location} = $location;
+    if (is_redirect($code)) {
+        my %h = @$headers;
+        foreach my $key (keys %h) {
+            if (lc $key eq 'location') {
+                $args{location} = $h{$key};
+            }
+        }
     }
 
     HTTP::Exception->throw($code, %args);
