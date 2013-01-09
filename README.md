@@ -17,7 +17,7 @@ or
 
     use HTTP::Response::Maker::Exception prefix => 'throw_';
 
-    throw_FOUND(Location => '/');
+    throw_FOUND([Location => '/']);
 
 # DESCRIPTION
 
